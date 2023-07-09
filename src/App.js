@@ -1,12 +1,20 @@
-import './App.css';
-
+import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Home from "./components/Home";
+import About from "./components/About";
+import NoteState from "./context/notes/noteState";
 function App() {
   return (
-    <div>
-      <span>
-        <h1>Chalo Shuruat Kre</h1>
-      </span>
-    </div>
+    <NoteState>
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/about" element={<About />} />
+        </Routes>
+      </Router>
+    </NoteState>
   );
 }
 
