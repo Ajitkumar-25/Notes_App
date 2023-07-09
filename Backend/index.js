@@ -13,7 +13,7 @@ app.get("/", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+  console.log(`Notes_App listening on port ${port}`);
 });
 const connectToMongo = require("./Database/db");
 connectToMongo();
