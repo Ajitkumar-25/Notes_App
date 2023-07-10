@@ -8,6 +8,7 @@ import Alert from "./components/Alert";
 import Signup from "./components/Signup";
 import Login from "./components/Login";
 import { useState } from "react";
+import Footer from "./components/Footer";
 
 function App() {
   const [alert, setAlert] = useState("");
@@ -33,6 +34,7 @@ function App() {
             <Route exact path="/login" element={<Login  showAlert={showAlert} />} />
           </Routes>
         </div>
+        <Footer/>
       </Router>
     </NoteState>
   );

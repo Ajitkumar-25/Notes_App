@@ -27,61 +27,54 @@ const AddNotes = (props) => {
   return (
     <div>
       <div className="container my-3">
-        <h2>Add a Notes</h2>
-        <form className="my-3">
+        <h2>ADD A NOTE</h2>
+        <form>
           <div className="form-group my-3">
             <label htmlFor="exampleInputTitle">Title</label>
             <input
               type="text"
-              className="form-control"
+              className="form-control border-2 border-success  "
               placeholder="Enter Title"
               id="title"
               name="title"
               onChange={onChange}
               minLength={5}
-              required value={note.title}
+              required
+              value={note.title}
             />
           </div>
           <div className="form-group my-3">
             <label htmlFor="exampleInputDescription">Description</label>
             <input
               type="text"
-              className="form-control"
+              className="form-control border-2 border-success"
               placeholder="Enter Detail Description here"
               id="description"
               name="description"
               onChange={onChange}
               minLength={5}
-              required  value={note.description}
+              required
+              value={note.description}
             />
           </div>
-          <div className="form-group">
+          <div className="form-group ">
             <label htmlFor="exampleInputTag ">Tag</label>
             <input
               type="text"
-              className="form-control"
+              className="form-control border-2 border-success"
               placeholder="Enter Notes Tag (if any)"
               id="tag"
               name="tag"
               onChange={onChange}
               minLength={5}
-              required value={note.tag}
+              required
+              value={note.tag}
             />
-          </div>
-          <div className="form-check my-3">
-            <input
-              type="checkbox"
-              className="form-check-input"
-              id="exampleCheck1"
-            />
-            <label className="form-check-label" htmlFor="exampleCheck1">
-              Check me to confirm
-            </label>
           </div>
           <button
             disabled={note.title.length < 5 || note.description.length < 5}
             type="submit"
-            className="btn btn-success"
+            className="btn btn-success mt-4"
             onClick={handleclick}
           >
             Add Note

@@ -46,7 +46,7 @@ const Signup = (props) => {
           <label htmlFor="name">Name</label>
           <input
             type="text"
-            className="form-control"
+            className="form-control border-2 border-success"
             id="name"
             placeholder="Enter Name"
             onChange={onchange}
@@ -59,7 +59,7 @@ const Signup = (props) => {
           <label htmlFor="email">Email address</label>
           <input
             type="email"
-            className="form-control"
+            className="form-control border-2 border-success"
             id="email"
             placeholder="Enter email"
             onChange={onchange}
@@ -72,7 +72,7 @@ const Signup = (props) => {
           <label htmlFor="password">Password</label>
           <input
             type="password"
-            className="form-control"
+            className="form-control border-2 border-success"
             id="password"
             placeholder="Password"
             onChange={onchange}
@@ -85,7 +85,7 @@ const Signup = (props) => {
           <label htmlFor="cpassword">Confirm Password</label>
           <input
             type="password"
-            className="form-control"
+            className="form-control border-2 border-success"
             id="cpassword"
             placeholder="cpassword"
             onChange={onchange}

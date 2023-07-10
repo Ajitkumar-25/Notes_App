@@ -17,8 +17,9 @@ const Login = (props) => {
         password: credentials.password,
       }),
     });
+    
     const json = await response.json();
-    console.log(json);
+    // console.log(json);
     if (json.authtoken) {
       //save the auth token and redirect
       localStorage.setItem("token", json.authtoken);
@@ -36,13 +37,13 @@ const Login = (props) => {
 
   return (
     <div className="container">
-      <h1 className="my-3">Login to continue</h1>
+      <h1 className="my-3">LOGIN TO CONTINUE</h1>
       <form onSubmit={handlesubmit}>
         <div className="form-group my-2">
           <label htmlFor="email">Email address</label>
           <input
             type="email"
-            className="form-control my-1"
+            className="form-control my-1 border-2 border-success"
             id="email"
             name="email"
             value={credentials.email}
@@ -56,7 +57,7 @@ const Login = (props) => {
           <label htmlFor="password">Password</label>
           <input
             type="password"
-            className="form-control my-1"
+            className="form-control my-1 border-2 border-success"
             id="password"
             name="password"
             value={credentials.password}
