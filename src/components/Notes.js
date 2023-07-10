@@ -18,56 +18,56 @@ const Notes = () => {
 
   const updateNote = (notes) => {
     ref.current.click();
-    console.log("Updating the note", notes);
+    // console.log("Updating the note", notes);
   };
 
   return (
     <>
       <AddNotes />
+
       <button
         type="button"
-        className="btn btn-primary"
-        data-toggle="modal"
-        data-target="#exampleModal"
+        className="btn btn-primary d-none"
+        data-bs-toggle="modal"
+        data-bs-target="#staticBackdrop"
         ref={ref}
       >
-        Launch demo modal
+        Launch static backdrop modal
       </button>
 
       <div
         className="modal fade"
-        id="exampleModal"
+        id="staticBackdrop"
+        data-bs-backdrop="static"
+        data-bs-keyboard="false"
         tabIndex="-1"
-        role="dialog"
-        aria-labelledby="exampleModalLabel"
+        aria-labelledby="staticBackdropLabel"
         aria-hidden="true"
       >
-        <div className="modal-dialog" role="document">
+        <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-header">
-              <h5 className="modal-title" id="exampleModalLabel">
+              <h1 className="modal-title fs-5" id="staticBackdropLabel">
                 Modal title
-              </h5>
+              </h1>
               <button
                 type="button"
-                className="close"
-                data-dismiss="modal"
+                className="btn-close"
+                data-bs-dismiss="modal"
                 aria-label="Close"
-              >
-                <span aria-hidden="true">&times;</span>
-              </button>
+              ></button>
             </div>
             <div className="modal-body">...</div>
             <div className="modal-footer">
               <button
                 type="button"
                 className="btn btn-secondary"
-                data-dismiss="modal"
+                data-bs-dismiss="modal"
               >
                 Close
               </button>
               <button type="button" className="btn btn-primary">
-                Save changes
+                Update Note
               </button>
             </div>
           </div>
