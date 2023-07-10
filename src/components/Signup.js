@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-const Signup = () => {
+const Signup = (props) => {
   const [credentials, setCredentials] = useState({
     name: "",
     email: "",
@@ -23,8 +23,16 @@ const Signup = () => {
     });
     const json = await response.json();
     console.log(json);
-    localStorage.setItem("token", json.authtoken);
-    navigate("/");
+    if (json.authtoken) {
+      //save the auth token and redirect
+      localStorage.setItem("token", json.authtoken);
+      navigate("/");
+      props.showAlert(" Account created succesfully", "success");
+      
+      // console.log("logged in");
+    } else {
+      props.showAlert("invalid credentials", "danger");
+    }
   };
   const onchange = (e) => {
     setCredentials({ ...credentials, [e.target.name]: e.target.value });
@@ -42,7 +50,9 @@ const Signup = () => {
             id="name"
             placeholder="Enter Name"
             onChange={onchange}
-            name="name" minLength={5} required
+            name="name"
+            minLength={5}
+            required
           />
         </div>
         <div className="form-group my-2">
@@ -53,7 +63,9 @@ const Signup = () => {
             id="email"
             placeholder="Enter email"
             onChange={onchange}
-            name="email" minLength={5} required
+            name="email"
+            minLength={5}
+            required
           />
         </div>
         <div className="form-group my-2">
@@ -64,7 +76,9 @@ const Signup = () => {
             id="password"
             placeholder="Password"
             onChange={onchange}
-            name="password" minLength={5} required
+            name="password"
+            minLength={5}
+            required
           />
         </div>
         <div className="form-group my-2">
@@ -75,7 +89,9 @@ const Signup = () => {
             id="cpassword"
             placeholder="cpassword"
             onChange={onchange}
-            name="cpassword" minLength={5} required
+            name="cpassword"
+            minLength={5}
+            required
           />
         </div>
         <button type="submit" className="btn btn-success my-2">
