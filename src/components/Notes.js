@@ -4,6 +4,7 @@ import noteContext from "../context/notes/noteContext";
 import NoteItem from "./NoteItem";
 import AddNotes from "./AddNotes";
 import { useEffect, useRef } from "react";
+import { useState } from "react";
 
 const Notes = () => {
   const context = useContext(noteContext);
@@ -16,9 +17,27 @@ const Notes = () => {
 
   const ref = useRef(null);
 
-  const updateNote = (notes) => {
+  const updateNote = (currentNote) => {
     ref.current.click();
+    setNote({
+      etitle: currentNote.title,
+      edescription: currentNote.description,
+      etag: currentNote.tag,
+    });
+
     // console.log("Updating the note", notes);
+  };
+
+  const [note, setNote] = useState({ etitle: "", edescription: "", etag: "" });
+
+  const handleclick = (e) => {
+    console.log("updatig the old values with new ones",note)
+    e.preventDefault();
+    
+  };
+
+  const onChange = (e) => {
+    setNote({ ...note, [e.target.name]: e.target.value });
   };
 
   return (
@@ -57,7 +76,46 @@ const Notes = () => {
                 aria-label="Close"
               ></button>
             </div>
-            <div className="modal-body">...</div>
+            <div className="modal-body">
+              <form className="my-3">
+                <div className="form-group my-3">
+                  <label htmlFor="exampleInputTitle">Title</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Enter Title"
+                    id="etitle"
+                    name="etitle"
+                    value={note.etitle}
+                    onChange={onChange}
+                  />
+                </div>
+                <div className="form-group my-3">
+                  <label htmlFor="exampleInputDescription">Description</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Enter Detail Description here"
+                    id="edescription"
+                    name="edescription"
+                    value={note.edescription}
+                    onChange={onChange}
+                  />
+                </div>
+                <div className="form-group">
+                  <label htmlFor="exampleInputTag ">Tag</label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    placeholder="Enter Notes Tag (if any)"
+                    id="etag"
+                    name="etag"
+                    value={note.etag}
+                    onChange={onChange}
+                  />
+                </div>
+              </form>
+            </div>
             <div className="modal-footer">
               <button
                 type="button"
@@ -66,7 +124,7 @@ const Notes = () => {
               >
                 Close
               </button>
-              <button type="button" className="btn btn-primary">
+              <button onClick={handleclick} type="button" className="btn btn-primary">
                 Update Note
               </button>
             </div>
