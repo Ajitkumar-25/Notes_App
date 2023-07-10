@@ -8,7 +8,7 @@ import { useState } from "react";
 
 const Notes = () => {
   const context = useContext(noteContext);
-  const { notes, getNotes } = context;
+  const { notes, getNotes, editNote } = context;
 
   useEffect(() => {
     getNotes();
@@ -16,10 +16,17 @@ const Notes = () => {
   }, []);
 
   const ref = useRef(null);
-
+  const refclose = useRef(null);
+  const [note, setNote] = useState({
+    id: "",
+    etitle: "",
+    edescription: "",
+    etag: "",
+  });
   const updateNote = (currentNote) => {
     ref.current.click();
     setNote({
+      id: currentNote._id,
       etitle: currentNote.title,
       edescription: currentNote.description,
       etag: currentNote.tag,
@@ -28,12 +35,10 @@ const Notes = () => {
     // console.log("Updating the note", notes);
   };
 
-  const [note, setNote] = useState({ etitle: "", edescription: "", etag: "" });
-
   const handleclick = (e) => {
-    console.log("updatig the old values with new ones",note)
-    e.preventDefault();
-    
+    // console.log("updatig the old values with new ones", note);
+    editNote(note.id, note.etitle, note.edescription, note.etag);
+    refclose.current.click();
   };
 
   const onChange = (e) => {
@@ -67,7 +72,7 @@ const Notes = () => {
           <div className="modal-content">
             <div className="modal-header">
               <h1 className="modal-title fs-5" id="staticBackdropLabel">
-                Modal title
+                Edit Notes
               </h1>
               <button
                 type="button"
@@ -87,7 +92,7 @@ const Notes = () => {
                     id="etitle"
                     name="etitle"
                     value={note.etitle}
-                    onChange={onChange}
+                    onChange={onChange} minLength={5} required
                   />
                 </div>
                 <div className="form-group my-3">
@@ -99,7 +104,7 @@ const Notes = () => {
                     id="edescription"
                     name="edescription"
                     value={note.edescription}
-                    onChange={onChange}
+                    onChange={onChange} minLength={5} required
                   />
                 </div>
                 <div className="form-group">
@@ -111,28 +116,39 @@ const Notes = () => {
                     id="etag"
                     name="etag"
                     value={note.etag}
-                    onChange={onChange}
+                    onChange={onChange} minLength={5} required
                   />
                 </div>
               </form>
             </div>
             <div className="modal-footer">
               <button
+                ref={refclose}
                 type="button"
                 className="btn btn-secondary"
                 data-bs-dismiss="modal"
               >
                 Close
               </button>
-              <button onClick={handleclick} type="button" className="btn btn-primary">
+              <button
+                disabled={note.etitle.length<5||note.edescription.length<5}
+                onClick={handleclick}
+                type="button"
+                className="btn btn-primary"
+              >
                 Update Note
               </button>
             </div>
           </div>
         </div>
+
+
       </div>
       <div className="row my-3">
         <h2>Your Notes</h2>
+        <div className="container mx-2">
+          {notes.length === 0 && "No Notes to display"}
+        </div>
         {notes.map((note) => {
           return (
             <NoteItem key={note._id} notes={note} updateNote={updateNote} />
