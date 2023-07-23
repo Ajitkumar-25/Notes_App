@@ -4,12 +4,12 @@ import { useNavigate } from "react-router-dom";
 
 const Navbar = (props) => {
   let location = useLocation();
-  const navigate=useNavigate();
-  const handlelogout=()=>{
+  const navigate = useNavigate();
+  const handlelogout = () => {
     localStorage.removeItem("token");
     props.showAlert("please login to continue", "danger");
     navigate("/login");
-  }
+  };
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -52,6 +52,18 @@ const Navbar = (props) => {
                   About
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link
+                  className={
+                    location.pathname === "/contactus"
+                      ? "nav-link active"
+                      : "nav-link"
+                  }
+                  to="/contactus"
+                >
+                  ContactUs
+                </Link>
+              </li>
             </ul>
             {!localStorage.getItem("token") ? (
               <form className="d-flex" role="search">
@@ -63,7 +75,9 @@ const Navbar = (props) => {
                 </Link>
               </form>
             ) : (
-              <button onClick={handlelogout} className="btn btn-success mx-2">Logout</button>
+              <button onClick={handlelogout} className="btn btn-success mx-2">
+                Logout
+              </button>
             )}
           </div>
         </div>
