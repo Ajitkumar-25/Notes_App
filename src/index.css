@@ -1,7 +1,7 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -9,30 +9,45 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-i{
+i {
   cursor: pointer;
 }
 
 svg {
-	height: 23rem;
-	margin-right: 4rem;
+  height: 23rem;
+  margin-right: 4rem;
 }
 
 #envelope {
   animation: float 2s ease-in-out infinite;
 }
 
-#star1, #star2, #star3, #star4, #star5, #star6 {
+#star1,
+#star2,
+#star3,
+#star4,
+#star5,
+#star6 {
   animation: blink 1s ease-in-out infinite;
 }
-#star2 { animation-delay: 100ms; }
-#star3 { animation-delay: 500ms; }
-#star4 { animation-delay: 700ms; }
-#star5 { animation-delay: 300ms; }
-#star6 { animation-delay: 200ms }
+#star2 {
+  animation-delay: 100ms;
+}
+#star3 {
+  animation-delay: 500ms;
+}
+#star4 {
+  animation-delay: 700ms;
+}
+#star5 {
+  animation-delay: 300ms;
+}
+#star6 {
+  animation-delay: 200ms;
+}
 
 @keyframes float {
   0% {
@@ -51,7 +66,7 @@ svg {
     opacity: 0;
   }
   50% {
-    opacity: .5;
+    opacity: 0.5;
   }
   100% {
     opacity: 1;
@@ -59,54 +74,50 @@ svg {
 }
 
 form {
-	min-width: 25rem;
-	
-	.title {
-		font-family: 'Pacifico', cursive;
-		color: #212529;
-		font-size: 2.5rem;
-	}
-	
+  .title {
+    font-family: "Pacifico", cursive;
+    color: #212529;
+    font-size: 2.5rem;
+  }
+
   .form-control {
     background-color: #f2f6f8;
-		border-radius: 2rem;
-    margin :5px 10px;
+    border-radius: 2rem;
+    margin: 5px 10px;
     border: none;
     box-shadow: 0px 7px 5px rgba(0, 0, 0, 0.11);
-		
+
     &.thick {
       height: 3.3rem;
-      padding: .5rem 3.5rem;
+      padding: 0.5rem 3.5rem;
     }
-		
-		&:focus {
-			background-color: #f2f6f8;
-			border: none;
-			box-shadow: 0px 7px 5px rgba(0, 0, 0, 0.11);
-		}
+
+    &:focus {
+      background-color: #f2f6f8;
+      border: none;
+      box-shadow: 0px 7px 5px rgba(0, 0, 0, 0.11);
+    }
   }
-	
-	.message .form-control {
-			padding: .5rem 1.8rem;
-	}
-	
+
+  .message .form-control {
+    padding: 0.5rem 1.8rem;
+  }
+
   ::placeholder {
-  
-		font-weight: 600;
+    font-weight: 600;
     font-size: 1.1rem;
     color: #838788;
     position: relative;
     left: 0;
   }
-	
+
   input,
   textarea {
-
     color: #212529;
     font-size: 1.1rem;
     border: 2px solid black;
   }
-	
+
   .icon {
     color: #57565c;
     height: 1.3rem;
@@ -117,14 +128,14 @@ form {
 }
 
 .btn.btn-primary {
-  font-family: 'Quicksand', sans-serif;
-	font-weight: bold;
+  font-family: "Quicksand", sans-serif;
+  font-weight: bold;
   height: 2.5rem;
   line-height: 2.5rem;
   padding: 0 3rem;
   border: 0;
   border-radius: 3rem;
-  background-image:linear-gradient(131deg, #ffd340, #ff923c, #ff923c, #ff923c);
+  background-image: linear-gradient(131deg, #ffd340, #ff923c, #ff923c, #ff923c);
   background-size: 300% 100%;
   transition: all 0.3s ease-in-out;
 }

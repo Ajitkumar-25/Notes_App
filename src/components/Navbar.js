@@ -66,8 +66,8 @@ const Navbar = (props) => {
               </li>
             </ul>
             {!localStorage.getItem("token") ? (
-              <form className="d-flex" role="search">
-                <Link to="/signup" className="btn btn-success mx-2">
+              <form className="d-flex " role="search">
+                <Link to="/signup" className="btn btn-success ">
                   SignUp
                 </Link>
                 <Link to="/login" className="btn btn-success mx-2">
