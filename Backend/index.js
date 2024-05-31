@@ -8,6 +8,9 @@ app.use(
   })
 );
 
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*")
+}) 
 app.use(express.json());
 //available routes
 
