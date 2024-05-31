@@ -1,7 +1,6 @@
 {
   "name": "notes_app",
   "version": "0.1.0",
-  "proxy": "https://notes-gvw3jcxbk-ajitkumar-25s-projects.vercel.app",
 
   "private": true,
   "dependencies": {
