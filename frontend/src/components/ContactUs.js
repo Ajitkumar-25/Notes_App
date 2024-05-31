@@ -2,7 +2,7 @@ import React from "react";
 
 const ContactUs = () => {
   return (
-    <div class="container d-flex justify-content-center align-items-center">
+    <div className="container d-flex justify-content-center align-items-center">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 790 563" fill="none">
         <g id="Image">
           <g id="g14">
@@ -68,9 +68,9 @@ const ContactUs = () => {
                   id="path56"
                   d="M222.015 539.778C157.683 522.604 101.579 476.087 72.2367 415.592C60.1279 390.628 52.3612 362.908 54.182 335.155C56.0014 307.4 68.2732 279.663 90.2639 263.011C112.253 246.359 144.303 242.756 167.56 257.538C190.03 271.821 200.733 299.209 220.204 317.461C243.475 339.274 280.404 345.641 308.459 330.683C336.514 315.723 352.288 279.369 342.05 248.968C332.575 220.834 305.793 203.339 282.527 185.228C259.261 167.115 236.126 141.651 239.454 112.116C242.315 86.7319 264.382 67.653 287.628 57.7513C332.132 38.7951 389.516 47.2223 419.844 85.2787C452.476 126.224 446.202 185.954 431.486 236.425C416.769 286.896 395.069 337.985 402.391 390.086C408.475 433.375 434.97 472.304 470.109 497.688C505.247 523.075 548.365 535.649 591.441 538.326C634.426 540.999 680.569 532.908 712.364 503.476C744.158 474.044 754.899 419.157 726.78 386.108C712.226 369.003 690.497 360.328 669.604 352.466C648.708 344.604 626.907 336.377 611.765 319.807C596.621 303.236 590.753 275.553 604.995 258.181C621.492 238.058 665.44 235.858 680.982 214.969C692.069 200.069 679.116 171.364 666.529 157.269"
                   stroke="#00C0E0"
-                  stroke-width="2.541"
-                  stroke-miterlimit="10"
-                  stroke-dasharray="7.62 7.62"
+                  strokeWidth="2.541"
+                  strokeMiterlimit="10"
+                  strokeDasharray="7.62 7.62"
                 />
               </g>
               <g id="g58">
@@ -85,8 +85,8 @@ const ContactUs = () => {
                   id="path64"
                   d="M107.952 308.508C121.544 366.877 153.477 420.713 197.968 460.267"
                   stroke="#00BBBF"
-                  stroke-width="2.02"
-                  stroke-miterlimit="10"
+                  strokeWidth="2.02"
+                  strokeMiterlimit="10"
                 />
               </g>
               <g id="g66">
@@ -101,8 +101,8 @@ const ContactUs = () => {
                   id="path72"
                   d="M633.861 349.129C617.182 393.899 586.452 433.173 547.233 459.836"
                   stroke="#00BBBF"
-                  stroke-width="1.612"
-                  stroke-miterlimit="10"
+                  strokeWidth="1.612"
+                  strokeMiterlimit="10"
                 />
               </g>
               <g id="g74">
@@ -110,8 +110,8 @@ const ContactUs = () => {
                   id="path76"
                   d="M198.233 424.458C213.177 349.774 197.247 269.251 155.048 206.17"
                   stroke="#11ABBA"
-                  stroke-width="2.541"
-                  stroke-miterlimit="10"
+                  strokeWidth="2.541"
+                  strokeMiterlimit="10"
                 />
               </g>
               <g id="g78">
@@ -182,8 +182,8 @@ const ContactUs = () => {
                   id="path116"
                   d="M546.285 450.207C530.11 375.786 544.71 295.004 585.861 231.219"
                   stroke="#11ABBA"
-                  stroke-width="2.541"
-                  stroke-miterlimit="10"
+                  strokeWidth="2.541"
+                  strokeMiterlimit="10"
                 />
               </g>
               <g id="g118">
@@ -261,8 +261,8 @@ const ContactUs = () => {
                   id="path160"
                   d="M194.298 545.299C131.158 507.676 73.43 460.749 23.4922 406.451"
                   stroke="#55CDE2"
-                  stroke-width="2.541"
-                  stroke-miterlimit="10"
+                  strokeWidth="2.541"
+                  strokeMiterlimit="10"
                 />
               </g>
               <g id="g162">
@@ -277,8 +277,8 @@ const ContactUs = () => {
                   id="path168"
                   d="M558.719 549.691C601.746 514.86 639.767 473.689 671.212 427.878"
                   stroke="#55CDE2"
-                  stroke-width="1.91"
-                  stroke-miterlimit="10"
+                  strokeWidth="1.91"
+                  strokeMiterlimit="10"
                 />
               </g>
               <g id="g170">
@@ -628,9 +628,9 @@ const ContactUs = () => {
                   id="path370"
                   d="M565.214 487.805C565.214 477.497 549.034 468.633 538.283 477.531C527.532 468.633 511.352 477.497 511.352 487.805C511.352 487.805 507.872 508.014 538.283 522.676C568.694 508.014 565.214 487.805 565.214 487.805Z"
                   stroke="#FAFAFA"
-                  stroke-width="3.811"
-                  stroke-miterlimit="10"
-                  stroke-linejoin="round"
+                  strokeWidth="3.811"
+                  strokeMiterlimit="10"
+                  strokeLinejoin="round"
                 />
               </g>
               <g id="g372">
@@ -758,43 +758,43 @@ const ContactUs = () => {
       </svg>
 
       <form>
-        <h1 class="title text-center mb-4">Talk to Us</h1>
+        <h1 className="title text-center mb-4">Talk to Us</h1>
 
-        <div class="form-group position-relative">
-          <label for="formName" class="d-block">
-            <i class="icon" data-feather="user"></i>
+        <div className="form-group position-relative">
+          <label htmlFor="formName" className="d-block">
+            <i className="icon" data-feather="user"></i>
           </label>
           <input
             type="text"
             id="formName"
-            class="form-control form-control-lg thick"
+            className="form-control form-control-lg thick"
             placeholder="Name"
           />
         </div>
 
-        <div class="form-group position-relative">
-          <label for="formEmail" class="d-block">
-            <i class="icon" data-feather="mail"></i>
+        <div className="form-group position-relative">
+          <label htmlFor="formEmail" className="d-block">
+            <i className="icon" data-feather="mail"></i>
           </label>
           <input
             type="email"
             id="formEmail"
-            class="form-control form-control-lg thick"
+            className="form-control form-control-lg thick"
             placeholder="E-mail"
           />
         </div>
 
-        <div class="form-group message">
+        <div className="form-group message">
           <textarea
             id="formMessage"
-            class="form-control form-control-lg"
+            className="form-control form-control-lg"
             rows="7"
             placeholder="Message"
           ></textarea>
         </div>
 
-        <div class="text-center">
-          <button type="submit" class="btn btn-primary" tabIndex="-1">
+        <div className="text-center">
+          <button type="submit" className="btn btn-primary" tabIndex="-1">
             Send message
           </button>
         </div>
