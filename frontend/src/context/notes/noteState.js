@@ -2,7 +2,8 @@ import NoteContext from "./noteContext";
 import { useState } from "react";
 
 const NoteState = (props) => {
-  const host = "http://localhost:5000";
+  // const host = "http://localhost:5000";
+  const web_host = "https://notes-app-l28p.onrender.com";
   const notesInitial = [];
   const [notes, setNotes] = useState(notesInitial);
 
@@ -10,7 +11,7 @@ const NoteState = (props) => {
 
   const getNotes = async () => {
     //API call
-    const response = await fetch(`${host}/api/notes/fetchallnotes`, {
+    const response = await fetch(`${web_host}/api/notes/fetchallnotes`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -26,7 +27,7 @@ const NoteState = (props) => {
   //Add a note
   const addNote = async (title, description, tag) => {
     //API call
-    const response = await fetch(`${host}/api/notes/addnote`, {
+    const response = await fetch(`${web_host}/api/notes/addnote`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -42,7 +43,7 @@ const NoteState = (props) => {
   //Delete a note
   const deleteNote = async (id) => {
     //API call
-    const response = await fetch(`${host}/api/notes/deletenote/${id}`, {
+    const response = await fetch(`${web_host}/api/notes/deletenote/${id}`, {
       method: "DElETE",
       headers: {
         "Content-Type": "application/json",
@@ -66,7 +67,7 @@ const NoteState = (props) => {
     //to do api call
     // console.log("Editing a note" + id);
     //API call
-    const response = await fetch(`${host}/api/notes/updatenote/${id}`, {
+    const response = await fetch(`${web_host}/api/notes/updatenote/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
